@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TD Notes</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    @RenderBody()
+    <div id="Wait" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 999999; background-color: rgba(0, 0, 0, 0.8)">
+        <h2 style="z-index: 9999999; color: white; width: 100%; text-align: center; margin-top: 50vh; transform: translateY(-50%)"></h2>
+    </div>
+
+    <script>
+        function _wait(msg) {
+            $("#Wait").show();
+            $("#Wait h2").html(msg);
+        }
+    </script>
+</body>
+</html>

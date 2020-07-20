@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Početna";
+}
+
+<style>
+    form {
+        min-width: 300px;
+        max-width: 500px;
+        margin: auto;
+        display: block;
+        margin-top: 50vh;
+        transform: translateY(-50%);
+        border: 2px solid black;
+        padding: 10px;
+    }
+
+    form input {
+        display: block;
+        width: 96%;
+        padding: 5px;
+        margin: 2%;
+        text-align: center;
+    }
+
+    form button {
+        display: block;
+        width: 96%;
+        margin: 2%;
+        padding: 5px;
+    }
+</style>
+
+<form method="post" action="/Home/Login">
+    <h2 style="text-align: center; margin-bottom: 25px">Beleške</h2>
+    <input type="text" placeholder="Korisničko ime" name="username" />
+    <input type="password" placeholder="Lozinka" name="pw" />
+    <button type="submit" >Loguj se</button>
+</form>
+
+
+<script>
+    $(function () {
+        $("form").submit(function () {
+            _wait('Logovanje...');
+        });
+    });
+</script>

@@ -1,0 +1,23 @@
+﻿@model NoteModel
+
+<style>
+    form, button, input, textarea {
+        max-width: 100%;
+    }
+</style>
+<form method="post" action="/Home/Logout">
+    <button style="background-color: red; color: white; margin: 10px">Izloguj se</button>
+</form>
+<form method="post" action="/Beleska/Update" style="padding: 20px">
+    <input type="text" name="uid" value="@Model.UserID" hidden/>
+    <textarea name="text" style="width: 100%; margin: 0; height: 500px; max-height: 60vh">@Model.Text</textarea>
+    <button type="submit" style="margin: auto; display: block; min-width: 300px; padding: 10px 20px">Sačuvaj</button>
+</form>
+
+<script>
+    $(function () {
+        $("form").submit(function () {
+            _wait('Čuvanje...');
+        });
+    });
+</script>
